@@ -1,0 +1,66 @@
+:root {
+  --fond: #f7f5f0;
+  --carte: #ffffff;
+  --texte: #1d1b18;
+  --doux: #6b665d;
+  --bord: #e3ded4;
+  --accent: #b8452e;
+  --ouvert: #2f7a4b;
+  --ferme: #8a8478;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fond: #16150f;
+    --carte: #211f19;
+    --texte: #f1ede4;
+    --doux: #a7a196;
+    --bord: #38342b;
+    --accent: #e0775c;
+    --ouvert: #6cc08a;
+    --ferme: #8f897d;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--fond);
+  color: var(--texte);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.5;
+}
+main { max-width: 1100px; margin: 0 auto; padding: 32px 16px 64px; }
+.marque { color: var(--accent); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; font-size: .8rem; margin: 0; }
+h1 { font-size: clamp(1.6rem, 4vw, 2.4rem); line-height: 1.15; margin: .3em 0; max-width: 22ch; }
+.intro { color: var(--doux); max-width: 60ch; }
+.choix { margin: 28px 0 20px; display: flex; flex-direction: column; gap: 6px; max-width: 420px; }
+.choix label { font-weight: 600; }
+select, input[type="search"] {
+  font: inherit; padding: 12px 14px; border-radius: 10px;
+  border: 1px solid var(--bord); background: var(--carte); color: var(--texte);
+}
+.filtres { display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: center; margin-bottom: 8px; }
+.filtres input[type="search"] { flex: 1 1 320px; }
+.case { display: flex; gap: 8px; align-items: center; color: var(--doux); }
+.info { color: var(--doux); }
+.erreur { color: var(--accent); font-weight: 600; }
+h2 { font-size: 1.2rem; margin: 32px 0 12px; }
+.grille { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; }
+.carte {
+  background: var(--carte); border: 1px solid var(--bord); border-radius: 14px;
+  padding: 16px 18px; display: flex; flex-direction: column; gap: 6px;
+}
+.carte.fermee { opacity: .75; }
+.carte h3 { font-size: 1.05rem; margin: 2px 0; line-height: 1.3; }
+.carte p { margin: 0; font-size: .93rem; }
+.carte .type { color: var(--doux); font-size: .85rem; }
+.carte-haut { display: flex; justify-content: space-between; gap: 8px; font-size: .8rem; }
+.organisme { font-weight: 700; color: var(--accent); }
+.statut { border-radius: 99px; padding: 1px 9px; border: 1px solid currentColor; white-space: nowrap; }
+.statut.ouvert { color: var(--ouvert); }
+.statut.ferme { color: var(--ferme); }
+dl { display: grid; grid-template-columns: auto 1fr; gap: 3px 10px; margin: 6px 0 0; font-size: .88rem; }
+dt { color: var(--doux); }
+dd { margin: 0; }
+.lien { margin-top: auto; padding-top: 8px; color: var(--accent); font-weight: 600; text-decoration: none; }
+.lien:hover { text-decoration: underline; }
+footer { margin-top: 48px; color: var(--doux); font-size: .85rem; max-width: 70ch; }
